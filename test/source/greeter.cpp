@@ -31,3 +31,20 @@ TEST_CASE("CodeWars Kata Cases") {
   CHECK(duplicate_encoder("(( @") == "))((");
   CHECK(duplicate_encoder(" ( ( )") == ")))))(");
 }
+
+
+SCENARIO("Our Duplicate Encoder Translates Characters to Parens") {
+  GIVEN("I have a string 'YourCodeNeedsTests'") {
+    std::string s{"YourCodeNeedsTests"};
+
+    WHEN("We encode it to parens") {
+      const auto encoded = duplicate_encoder(s);
+
+      THEN("the result should be the same length of the input") {
+
+        CHECK(encoded.size() == s.size()+1);
+
+      }
+    }
+  }
+}
