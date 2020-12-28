@@ -41,7 +41,7 @@ FILE(GLOB_RECURSE sources CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/source/
 
 add_library(Greeter ${headers} ${sources})
 
-set_target_properties(Greeter PROPERTIES CXX_STANDARD 17)
+set_target_properties(Greeter PROPERTIES CXX_STANDARD 20)
 
 # beeing a cross-platform target, we enforce standards conformance on MSVC
 target_compile_options(Greeter PUBLIC "$<$<BOOL:${MSVC}>:/permissive->")
